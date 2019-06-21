@@ -1,0 +1,31 @@
+.logo {
+    display: inline-block;
+    width: 4.5rem;
+    height: 4.5rem;
+    @include margin(0 .75rem 0 0);
+    @include bg-img("../img/logo-img.png", center, contain, no-repeat);
+
+    &-box {
+        @include flex(row, center, center);
+        @include margin(0 0 0 2rem);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: $color-white;
+        letter-spacing: 1px;
+
+        @include respond(phone) {
+            @include margin(2rem 0 0 2rem);
+            color: $color-white;
+            text-shadow: 0 0 1.25rem rgba($font-color-primary, .85);
+        }
+
+        &--fixed {
+            @include position(fixed, 2rem null null 1.25rem);
+            z-index: 1001;
+
+            @include respond(phone) {
+                @include position(absolute, 2rem null null 1.25rem);
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+.popular-product {
+    width: 100%;
+    @include flex(row, space-between, center);
+
+    @include respond(phone) {
+        @include flex(column, space-between, center);
+    }
+
+    &__item {
+        width: 19vw;
+        height: 22vw;
+        text-align: center;
+        @include position(relative, 0 0 0 0);
+        @include flex(column, flex-end, center);
+        transition: all .25s;
+
+        @include respond(tab-port) {
+            width: 30vw;
+            height: 38vw;
+            &:last-child,
+            &:first-child {
+                display: none;
+            }
+        }
+
+        @include respond(phone) {
+            width: 60vw;
+            height: 70vw;
+            @include margin(2rem null);
+        }
+
+        &--1 {
+            @include bg-img("../img/popular-img-1.png", center, cover, no-repeat);
+        }
+
+        &--2 {
+            @include bg-img("../img/popular-img-2.png", center, cover, no-repeat);
+        }
+
+        &--3 {
+            @include bg-img("../img/popular-img-3.png", center, cover, no-repeat);
+        }
+
+        &--4 {
+            @include bg-img("../img/popular-img-4.png", center, cover, no-repeat);
+        }
+
+        &--5 {
+            @include bg-img("../img/popular-img-5.png", center, cover, no-repeat);
+        }
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 0;
+            @include position(absolute, 0 0 null 0);
+            background-color: rgba($color-black, .3);
+            transition: all .25s;
+        }
+
+        & > .btn {
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            @include padding(null 3.5rem null 3.5rem);
+            @include margin(0 0 0 0);
+            transition: all .25s;
+
+            @include respond(tab-land) {
+                @include padding(null 3.25rem null 3.25rem);
+                transform: scale(.8);
+            }
+
+            @include respond(tab-port) {
+                transform: scale(1);
+            }
+
+            @include respond(phone) {
+                @include padding(null 2.5rem null 2.5rem);
+            }
+        }
+
+        &:not(:nth-child(4n+1)):hover  {
+            &::before {
+                height: 100%;
+            }
+
+            .btn {
+                opacity: 1;
+                visibility: visible;
+                @include margin(5rem 0 3.5rem 0);
+
+                @include respond(tab-land) {
+                    @include margin(3rem null 2.5rem null);
+                }
+
+                @include respond(tab-port) {
+                    @include margin(4.5rem null 3.5rem null);
+                }
+
+                @include respond(phone) {
+                    @include margin(5rem null 4rem null);
+                }
+            }
+
+            .popular-product__heading {
+                &--main {
+                    font-weight: 800;
+                    transform: scale(1.4);
+
+                    @include respond(tab-land) {
+                        transform: scale(1.2) translateY(.5rem);
+                    }
+
+                    @include respond(tab-port) {
+                        transform: scale(1.25);
+                    }
+
+                    @include respond(phone) {
+                        transform: scale(1.4);
+                    }
+                }
+        
+                &--sub {
+                    transform: translateY(.5rem) scaleX(1.05);
+                    color: $color-white;
+
+                    @include respond(phone) {
+                        transform: translateY(.5rem);
+                    }
+                }
+            }
+        }
+
+        &:first-child,
+        &:last-child {
+            -webkit-filter: brightness(.45);
+            filter: brightness(.45);
+
+            & > * {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    &__heading {
+        & > * {
+            transition: all .25s;
+        }
+        color: $color-white;
+
+        &--main {
+            font-size: 2.5rem;
+            font-weight: 700;
+
+            @include respond(tab-land) {
+                font-size: 2.2rem;
+            }
+
+            @include respond(phone) {
+                font-size: 2.8rem;
+            }
+        }
+
+        &--sub {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: $color-primary;
+
+            @include respond(phone) {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

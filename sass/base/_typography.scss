@@ -1,0 +1,97 @@
+body {
+    font-family: $primary-font;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $font-color-primary;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-align: center;
+    line-height: 1.1;
+
+    &__main {
+        font-size: 7.5rem;
+        color: inherit;
+        font-weight: 900;
+
+        @include respond(tab-port) {
+            font-size: 6.5rem;
+        }
+
+        @include respond(phone) {
+            font-size: 6rem;
+        }
+
+        &--red {
+            display: block;
+            color: $brand-primary;
+        }
+    }
+
+    &__sub {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: rgba($color-grey, .45);
+        @include margin(2rem null null null);
+
+        @include respond(phone) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.heading-secondary {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: $font-color-primary;
+}
+
+.heading-tertiary {
+    color: $font-color-primary;
+    text-align: center;
+    font-weight: 500;
+
+    &__main {
+        font-size: 2.7rem;
+        line-height: 1.2;
+
+        @include respond(tab-land) {
+            font-size: 2.5rem;
+        }
+
+        @include respond(phone) {
+            font-size: 2.8rem;
+        } 
+    }
+    
+    &__sub {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: $font-color-primary-light-1;
+
+        @include respond(tab-port) {
+            font-size: 1.35rem;
+        }
+    }
+}
+
+.paragraph {
+    font-size: 1.4rem;
+    line-height: inherit;
+
+    @include respond(tab-port) {
+        font-size: 1.5rem;
+        line-height: 1.8;
+    }
+
+    @include respond(phone) {
+        font-size: 1.6rem;
+        line-height: 1.85;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+}

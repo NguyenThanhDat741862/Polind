@@ -1,0 +1,104 @@
+.section-popular {
+    background-color: transparent;
+    z-index: 2;
+    margin-top: calc(-11vw - 5.5rem);
+
+    @include respond(tab-port) {
+        margin-top: calc(-15vw - 8rem);
+    }
+
+    @include respond(phone) {
+        margin-top: 3rem;
+    }
+
+    & .heading-secondary:first-child {
+        color: $color-white;
+        font-weight: normal;
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+
+        @include respond(tab-port) {
+            font-size: 1.5rem;
+        }
+
+        @include respond(phone) {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: $font-color-primary;
+        }
+    }
+}
+
+.section-product {
+    @include padding(4rem 20vw 1rem 20vw);
+
+    @include respond(tab-land) {
+        @include padding(4rem 18.5vw 1rem 18.5vw);
+    }
+
+    @include respond(phone) {
+        @include padding(4rem 10vw 1rem 10vw);
+    }
+}
+
+.section-about {
+    @include padding(2rem 20vw 8rem 20vw);
+    @include position(relative, 0 0 0 0);
+    background: transparent;
+
+    @include respond(tab-land) {
+        @include padding(2rem 12vw 6rem 12vw);
+    }
+
+    @include respond(phone) {
+        @include padding(2rem 8vw 4rem 8vw);
+    }
+
+    &:before {
+        content: "Sandomierz";
+        text-transform: uppercase;
+        text-align: right;
+        text-shadow: 0 0 35rem rgba($font-color-primary-light-3, .95);
+        line-height: .9;
+        word-break: break-all;
+        font-weight: 900; 
+        color: $about-bg-color;
+        font-size: 25rem;
+        height: auto;
+        width: 50%;
+        z-index: -1;
+        @include position(absolute, 0 0 null null);
+
+        @include respond(tab-port) {
+            font-size: 20rem;
+        }
+
+        @include respond(phone) {
+            width: 85%;
+        }
+    }
+    
+    &:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: $about-bg-color;
+        @include position(absolute, 0 0 0 0);
+        z-index: -2;
+    }
+}
+
+.section-register {
+    background-color: transparent;
+    @include position(relative, 0 0 0 0);
+
+    &:before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        @include position(absolute, 0 0 0 0);
+        @include bg-img("../img/register-img.png", center, cover, no-repeat, fixed);
+        filter: brightness(.3);
+        z-index: -1;
+    }
+}

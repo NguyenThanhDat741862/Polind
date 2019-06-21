@@ -1,0 +1,29 @@
+@keyframes rotate {
+    0% { 
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    } 
+    
+    50% { 
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    } 
+    
+    100% { 
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+@keyframes preloader-done {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        z-index: 3000;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 0;
+    }
+}

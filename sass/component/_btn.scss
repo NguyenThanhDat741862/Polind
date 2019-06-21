@@ -1,0 +1,110 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        @include position(relative, 0 0 0 0);
+        @include padding(1rem 2.5rem);
+        height: auto;
+        width: auto;
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 10rem;
+        color: $color-primary-dark-2;
+        background-color: $color-primary;
+        cursor: pointer;
+        border: none;
+        transition: all .15s;
+        transition-delay: .1s;
+
+        @include respond(phone) {
+            font-size: 1.15rem;
+            @include padding(.85rem null);
+        }
+
+        &::before {
+            content: "";
+            @include center;
+            opacity: 0;
+            background-color:  $color-primary-light;
+            visibility: hidden;
+            backface-visibility: hidden;
+            transform: translate(-50%, -50%) scaleX(1.5) scaleY(1.5);
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            border-radius: 10rem;
+            transition: all .25s;
+        }
+
+        &:hover {
+            background-color: $color-primary-light;
+            color: $color-white;
+            transform: scaleX(1.07) scaleY(1.05);
+
+            &::before {
+                visibility: visible;
+                transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+                opacity: 1;
+            }
+        }
+    }
+
+    &--light {
+        &,
+        &:link,
+        &:visited {
+            background-color: $color-white;
+            color: $font-color-primary-light-2;
+            box-shadow: 0 0 5rem rgba($font-color-primary-light-3, .45);
+            transition: all 0.25s;
+
+            &:hover {
+                background-color: $color-primary;
+                color: $color-primary-dark-2;
+                box-shadow: none;
+            }
+        }
+    }
+
+    &--red {
+        &,
+        &:link,
+        &:visited {
+            background-color: rgba($brand-primary, .85);
+            color: $color-white;
+            box-shadow: 0 0 5rem rgba($font-color-primary-light-3, .45);
+            transition: all 0.25s;
+
+            &::before {
+                content: "";
+                @include center;
+                opacity: 0;
+                background-color:  $brand-primary;
+                visibility: hidden;
+                backface-visibility: hidden;
+                transform: translate(-50%, -50%) scaleX(1.5) scaleY(1.5);
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                border-radius: 10rem;
+                transition: all .25s;
+            }
+
+            &:hover {
+                background-color: rgba($brand-primary, 1);
+                box-shadow: none;
+                transform: scaleX(1.07) scaleY(1.05);
+    
+                &::before {
+                    visibility: visible;
+                    transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

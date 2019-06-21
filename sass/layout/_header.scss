@@ -1,0 +1,55 @@
+.header {
+    height: calc(100vh + 11vw + 8rem);
+    width: 100%;
+    @include position(relative, 0);
+    // @include flex(column, center, center);
+
+    @include respond(tab-land) {
+        height: 120vh;
+    }
+
+    @include respond(tab-port) {
+        height: calc(100vh + 19vw + 8rem);
+    }
+    
+    @include respond(phone) {
+        height: 100vh;
+    }
+
+    &::before {
+        content: "";
+        @include position(absolute, 0);
+        @include size(100%, 100%);
+        @include bg-img("../img/banner.png", center, cover, no-repeat, fixed);
+        filter: brightness(.4);
+        z-index: -1;
+    }
+
+    & .btn {
+        margin-top: 0;
+
+        @include respond(tab-port) {
+            margin-top: 0;
+        }
+
+        @include respond(phone) {
+            margin-top: 4rem;
+        }
+    }
+
+    &__text-box {
+        transform: translateY(-7rem);
+
+        @include respond(tab-land) {
+            transform: translateY(-5rem);
+        }
+
+        @include respond(tab-port) {
+            transform: translateY(-7rem);
+        }
+
+        @include respond(phone) {
+            transform: translateY(0);
+        }
+    }
+}

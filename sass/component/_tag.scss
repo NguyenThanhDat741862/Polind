@@ -1,0 +1,51 @@
+.tag {
+    display: inline-block;
+    @include padding(.5rem 1.1rem);
+    @include margin(null .5rem);
+    background-color: $font-color-primary-light-2;
+    color: $color-white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 50rem;
+    transition: all .1s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-primary;
+    }
+    
+    &__group {
+        @include flex(row, space-between, center);
+        width: 50vw;
+
+        @include respond(tab-land) {
+            width: 55vw;
+        }
+
+        @include respond(tab-port) {
+            @include flex(column, flex-start, center);
+            @include padding(1rem null 2rem null);
+        }
+    }
+    
+    &__list {
+        @include flex(row, space-between, center);
+        display: inline-flex;
+
+        @include respond(tab-port) {
+            width: auto;
+            @include flex(row, flex-start, center);
+
+            &:not(:first-child) {
+                @include margin(1.5rem null null null);
+            }
+        }
+    }
+    
+    &--light {
+        background-color: $color-white;
+        color: $font-color-primary-light-4;
+        border: 1px solid $font-color-primary-light-2;
+    }
+}

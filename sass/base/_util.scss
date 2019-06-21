@@ -1,0 +1,114 @@
+// align-text
+.center-text { text-align: center !important; }
+
+// margin-bottom (rem)
+@for $i from 1 through 20 {
+    .#{mb}-#{$i} {
+        margin-bottom: $i#{rem} !important;
+    }
+}
+
+// margin-top (rem)
+@for $i from 1 through 20 {
+    .#{mt}-#{$i} {
+        margin-top: $i#{rem} !important;
+    }
+}
+
+// margin-right (rem)
+@for $i from 1 through 20 {
+    .#{mr}-#{$i} {
+        margin-right: $i#{rem} !important;
+    }
+}
+
+// margin-left (rem)
+@for $i from 1 through 20 {
+    .#{ml}-#{$i} {
+        margin-left: $i#{rem} !important;
+    }
+}
+
+// margin horizontal (rem)
+@for $i from 1 through 20 {
+    .#{mh}-#{$i} {
+        margin-top: $i#{rem} !important;
+        margin-bottom: $i#{rem} !important;
+    }
+}
+
+// margin vertical (rem)
+@for $i from 1 through 20 {
+    .#{mv}-#{$i} {
+        margin-left: $i#{rem} !important;
+        margin-right: $i#{rem} !important;
+    }
+}
+
+// margin (rem)
+@for $i from 1 through 20 {
+    .#{m}-#{$i} {
+        margin: $i#{rem} !important;
+    }
+}
+
+// padding-bottom (rem)
+@for $i from 1 through 20 {
+    .#{pb}-#{$i} {
+        padding-bottom: $i#{rem} !important;
+    }
+}
+
+// padding-top (rem)
+@for $i from 1 through 20 {
+    .#{pt}-#{$i} {
+        padding-top: $i#{rem} !important;
+    }
+}
+
+// padding-right (rem)
+@for $i from 1 through 20 {
+    .#{pr}-#{$i} {
+        padding-right: $i#{rem} !important;
+    }
+}
+
+// padding-left (rem)
+@for $i from 1 through 20 {
+    .#{pl}-#{$i} {
+        padding-left: $i#{rem} !important;
+    }
+}
+
+// padding horizontal (rem)
+@for $i from 1 through 20 {
+    .#{ph}-#{$i} {
+        padding-top: $i#{rem} !important;
+        padding-bottom: $i#{rem} !important;
+    }
+}
+
+// padding vertical (rem)
+@for $i from 1 through 20 {
+    .#{pv}-#{$i} {
+        padding-left: $i#{rem} !important;
+        padding-right: $i#{rem} !important;
+    }
+}
+
+// padding (rem)
+@for $i from 1 through 20 {
+    .#{p}-#{$i} {
+        padding: $i#{rem} !important;
+    }
+}
+
+// full screen box
+.full-screen { 
+    height: 100vh;
+    width: 100vw;
+}
+
+// flex
+.flex-col-center { @include flex(column, center, center); }
+.flex-row-center { @include flex(row, center, center); }
