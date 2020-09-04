@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bourbon": "^5.1.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.13.1",
     "reset-css": "^4.0.1"
   },
   "devDependencies": {},
